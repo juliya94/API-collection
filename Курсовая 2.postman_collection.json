@@ -1,0 +1,577 @@
+{
+	"info": {
+		"_postman_id": "42ca9fbd-cfb6-4a56-b8f2-59ed2064dea5",
+		"name": "Курсовая 2",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "27657957"
+	},
+	"item": [
+		{
+			"name": "Создание ЛС",
+			"item": [
+				{
+					"name": "Получение",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Cookie",
+								"value": "token_global={{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"from\": \"2023-07-12T10:00:00+03:00\",\r\n    \"till\": \"2023-07-12T10:30:00+03:00\",\r\n    \"onlyTypes\": [\r\n        \"slot\"\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}events",
+							"host": [
+								"{{baseUrl}}events"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Создание с датой в прошлом",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var key = \"PersenalId2\"\r",
+									"var value = pm.response.json().data.payload.id\r",
+									"pm.collectionVariables.set(key, value)\r",
+									"\r",
+									"var key = \"startAt2\"\r",
+									"var value = pm.response.json().data.startAt\r",
+									"pm.collectionVariables.set(key, value)\r",
+									"\r",
+									"\r",
+									"\r",
+									"\r",
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Cookie",
+								"value": "token_global={{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"backgroundColor\": \"#FFF7C7\",\r\n    \"color\": \"#FAC641\",\r\n    \"description\": \"\",\r\n    \"title\": \"привет\",\r\n    \"startAt\": \"2023-07-10T01:50:00+03:00\",\r\n    \"endAt\": \"2023-07-10T02:00:00+03:00\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}createPersonal",
+							"host": [
+								"{{baseUrl}}createPersonal"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Создание",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var key = \"PersenalId\"\r",
+									"var value = pm.response.json().data.payload.id\r",
+									"pm.collectionVariables.set(key, value)\r",
+									"\r",
+									"var key = \"startAt\"\r",
+									"var value = pm.response.json().data.startAt\r",
+									"pm.collectionVariables.set(key, value)\r",
+									"\r",
+									"\r",
+									"\r",
+									"\r",
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Cookie",
+								"value": "token_global={{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"backgroundColor\": \"#FFF7C7\",\r\n    \"color\": \"#FAC641\",\r\n    \"description\": \"fg\",\r\n    \"title\": \"sg\",\r\n    \"startAt\": \"2023-07-12T10:00:00+03:00\",\r\n    \"endAt\": \"2023-07-12T10:30:00+03:00\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}createPersonal",
+							"host": [
+								"{{baseUrl}}createPersonal"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Создание события в текущем месяце за прошлой",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var key = \"PersenalId4\"\r",
+									"var value = pm.response.json().data.payload.id\r",
+									"pm.collectionVariables.set(key, value)\r",
+									"\r",
+									"var key = \"startAt4\"\r",
+									"var value = pm.response.json().data.startAt\r",
+									"pm.collectionVariables.set(key, value)\r",
+									"\r",
+									"\r",
+									"\r",
+									"\r",
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Cookie",
+								"value": "token_global={{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"backgroundColor\": \"#F4F5F6\",\r\n    \"color\": \"#81888D\",\r\n    \"description\": \"\",\r\n    \"title\": \"ппппп\",\r\n    \"startAt\": \"2023-06-20T01:00:00+03:00\",\r\n    \"endAt\": \"2023-06-20T01:30:00+03:00\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}createPersonal",
+							"host": [
+								"{{baseUrl}}createPersonal"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Создание ЛС с не валидными данными",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var key = \"PersenalId3\"\r",
+									"var value = pm.response.json().data.payload.id\r",
+									"pm.collectionVariables.set(key, value)\r",
+									"\r",
+									"var key = \"startAt3\"\r",
+									"var value = pm.response.json().data.startAt\r",
+									"pm.collectionVariables.set(key, value)\r",
+									"\r",
+									"\r",
+									"\r",
+									"\r",
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Cookie",
+								"value": "token_global={{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"backgroundColor\": \"#F4F5F6\",\r\n    \"color\": \"#81888D\",\r\n    \"description\": \"\",\r\n    \"title\": \"하늘\",\r\n    \"startAt\": \"2023-07-10T13:00:00+03:00\",\r\n    \"endAt\": \"2023-07-10T13:30:00+03:00\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}createPersonal",
+							"host": [
+								"{{baseUrl}}createPersonal"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Редактирование ЛС",
+			"item": [
+				{
+					"name": "События в календаре разделяются по цветам",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var key = \"PersenalId4\"\r",
+									"var value = pm.response.json().data.payload.id\r",
+									"pm.collectionVariables.set(key, value)\r",
+									"\r",
+									"var key = \"startAt4\"\r",
+									"var value = pm.response.json().data.startAt\r",
+									"pm.collectionVariables.set(key, value)\r",
+									"\r",
+									"\r",
+									"\r",
+									"\r",
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Cookie",
+								"value": "token_global={{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"backgroundColor\": \"#FFF7C7\",\r\n    \"color\": \"#FAC641\",\r\n    \"description\": \"\",\r\n    \"title\": \"ппппп\",\r\n    \"startAt\": \"2023-06-20T01:00:00+03:00\",\r\n    \"endAt\": \"2023-06-20T01:30:00+03:00\",\r\n    \"id\": 83361354,\r\n    \"oldStartAt\": \"2023-06-20T01:00:00+03:00\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}updatePersonal",
+							"host": [
+								"{{baseUrl}}updatePersonal"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Редактирование",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var key = \"PersenalId\"\r",
+									"var value = pm.response.json().data.payload.id\r",
+									"pm.collectionVariables.set(key, value)\r",
+									"\r",
+									"var key = \"startAt\"\r",
+									"var value = pm.response.json().data.startAt\r",
+									"pm.collectionVariables.set(key, value)\r",
+									"\r",
+									"\r",
+									"\r",
+									"\r",
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Cookie",
+								"value": "token_global={{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"backgroundColor\": \"#EBFDF2\",\r\n    \"color\": \"#43B658\",\r\n    \"description\": \"fg12\",\r\n    \"title\": \"sg\",\r\n    \"startAt\": \"2023-07-17T10:20:00+03:00\",\r\n    \"endAt\": \"2023-07-17T10:50:00+03:00\",\r\n    \"id\": {{PersenalId}},\r\n    \"oldStartAt\": \"{{startAt}}\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}updatePersonal",
+							"host": [
+								"{{baseUrl}}updatePersonal"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Редактирование с датой в прошлом",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var key = \"PersenalId2\"\r",
+									"var value = pm.response.json().data.payload.id\r",
+									"pm.collectionVariables.set(key, value)\r",
+									"\r",
+									"var key = \"startAt2\"\r",
+									"var value = pm.response.json().data.startAt\r",
+									"pm.collectionVariables.set(key, value)\r",
+									"\r",
+									"\r",
+									"\r",
+									"\r",
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Cookie",
+								"value": "token_global={{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"backgroundColor\": \"#EBFDF2\",\r\n    \"color\": \"#43B658\",\r\n    \"description\": \"парааа\",\r\n    \"title\": \"приветasz\",\r\n    \"startAt\": \"2023-07-11T18:50:00+03:00\",\r\n    \"endAt\": \"2023-07-11T19:10:00+03:00\",\r\n    \"id\": {{PersenalId2}},\r\n    \"oldStartAt\": \"{{startAt2}}\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}updatePersonal",
+							"host": [
+								"{{baseUrl}}updatePersonal"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Удаление ЛС",
+			"item": [
+				{
+					"name": "Удаление",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Cookie",
+								"value": "token_global={{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": {{PersenalId}},\r\n    \"startAt\": \"{{startAt}}\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}removePersonal",
+							"host": [
+								"{{baseUrl}}removePersonal"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Удаление 2",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Cookie",
+								"value": "token_global={{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": {{PersenalId2}},\r\n    \"startAt\": \"{{startAt2}}\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}removePersonal",
+							"host": [
+								"{{baseUrl}}removePersonal"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "https://api-teachers.skyeng.ru/v2/schedule/",
+			"type": "string"
+		},
+		{
+			"key": "token",
+			"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJ1c2VySWQiOjEwMzM4NzM2LCJpZGVudGl0eSI6InRlc3QtbW9iaWxlMUBza3llbmcucnUiLCJpZGVudGl0eUxvZ2luIjpudWxsLCJpZGVudGl0eUVtYWlsIjoidGVzdC1tb2JpbGUxQHNreWVuZy5ydSIsImlkZW50aXR5UGhvbmUiOiIrMTkwOTkwOTMzMzMiLCJuYW1lIjoiSm9obiIsInN1cm5hbWUiOiJMZW5ub24iLCJlbWFpbCI6InRlc3QtbW9iaWxlMUBza3llbmcucnUiLCJ1aUxhbmd1YWdlIjoicnUiLCJsb2NhbGUiOiJydSIsInNlcnZpY2VMb2NhbGUiOm51bGwsInVhcyI6MzAsImp3dFR5cGUiOjEsImp0aSI6Imw0bmpKekJXWmJUaGdCREVDamhSODJvM2hlRmxXZzQ2IiwiYnJhbmQiOm51bGwsImV4cCI6MTY4OTE0MDQ5OSwiYXZhdGFyVXJsIjoiaHR0cHM6XC9cL2F1dGgtYXZhdGFycy1za3llbmcuaW1naXgubmV0XC8xMDMzODczNlwvZTllMDc0YTQtMmM3My00NzhhLWI3YzItMTc4ZGI0ZjUwODY3P2F1dG89Zm9ybWF0JTJDZW5oYW5jZSZmaXQ9Y3JvcCZoPTIwMCZpeGxpYj1waHAtMi4xLjEmcT03NSZzYXQ9OCZzaGFycD0xMCZ2aWI9OCZ3PTIwMCIsImJpcnRoZGF5IjoiMTk0MC0xMC0wOSIsImFJc1N0cm9uZyI6dHJ1ZSwiYVR5cGUiOiJVU0VSTkFNRV9QQVNTV09SRCIsImFUaW1lIjoxNjg4ODAyOTgzLCJyb2xlcyI6WyJST0xFX1RFQUNIRVIiLCJST0xFX0NSTTJfVEVBQ0hFUl9BQ0NFU1MiLCJST0xFX1RUQ19VU0FHRSIsIlJPTEVfVklNQk9YX1RFQUNIRVJfVVNBR0UiLCJST0xFX01BVEhfVEVBQ0hFUiIsIlJPTEVfTUFUSF9DT05URU5UX1RIRU1FX1ZJRVciLCJST0xFX0VTU0FZX0lOU1BFQ1RPUl9URUFDSEVSIl19.oe2tjOElp4f_Kv4Z730F3lP4UtbzNwQbPxsMRiZeCXcXmoO6CIhwtJSu3ztso6DGqqM6N21eglAd7BG3SLv0CtaiLhyOh01OO75Rfioq9DMt2C0asVO2aFpq7_85NtcBXvJmp6IBKDNwlP96yiT_5GxNxFllclGRW7idX7aZ4FmM_q1gq0ZLnHlgdAazzLTQDb7navxxefpKCnzobRSf9u0aOr1GHA3rov_G3JGVO-lN0t1C4no3BOhBqnTLww_nb7yBdyphUGGh14Tomy0Zqjzvcifq2hDkU6YBn58pMl_cK-OMIexr8DIwTUdpAKg6wc1o-xp-A2HtRFFPj2XNeyvJxG-5dis1O1vNz9hTMJLUQqKuDKIX1fuAxTNCiKOSQZ2tHGWDaQm-eUppg1NrBekdnorcLo9EkOSnLFNFg-H6FK1ZG-txl2MrYIgWMsqN9LVu9HiWCQBzSGOluDUycV9K-Hs61ZsZC9IrrNuBTsMD_DM6eff_LOYmF8VERr-YH5xWik6aLtjQ5QwUyR4ryXFedffCNgC6HAcX9BOnjyJ05HKqhbqEqmIhYEZ6kXKF8nEM0N_uc8Joa2UKsn_V-nK0bN1GjN6PLDg_kosH4udd14T9-Yc6d_OV3rbD3logq3tJ3fiI8T2-9Lqnw-lldp0yEAEwaSL4zAyKnt2UgaI; amplitude_id_ef9dd375ed875487462b31c2bbac3d1fskyeng.ru=eyJkZXZpY2VJZCI6IjhhMTc4YWU0LTNjOWItNDc5Yy1hMzVmLWZjMjhmNmNhY2ZiNFIiLCJ1c2VySWQiOiIxMDMzODczNiIsIm9wdE91dCI6ZmFsc2UsInNlc3Npb25JZCI6MTY4OTA1ODE4NTI4NywibGFzdEV2ZW50VGltZSI6MTY4OTA1ODE4NTI4NywiZXZlbnRJZCI6MCwiaWRlbnRpZnlJZCI6MCwic2VxdWVuY2VOdW1iZXIiOjB9; _ga_SR964WVJCV=GS1.1.1689057964.4.1.1689058186.0.0.0",
+			"type": "string"
+		},
+		{
+			"key": "PersenalId",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "startAt",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "PersenalId2",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "startAt2",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "PersenalId3",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "startAt3",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "PersenalId4",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "startAt4",
+			"value": "",
+			"type": "string"
+		}
+	]
+}
